@@ -592,12 +592,14 @@ class HandRightTab(QWidget):
         perturbYSigma = self.perturbYSigmaBox.value()
         perturbThetaSigma = self.perturbThetaSigmaBox.value()
         showImage = self.showImageBox.isChecked()
+        font = ImageFont.truetype(fontPath, size=fontSize)
 
 
         template = Template(
             background=background,
-            font_size=fontSize,
+            #font_size=fontSize,
             font=font,
+            #font=ImageFont.truetype(fontPath, size=fontSize),
             line_spacing=lineSpacing,
             fill=fontColor,  # 字体“颜色”
             left_margin=leftMargin,
