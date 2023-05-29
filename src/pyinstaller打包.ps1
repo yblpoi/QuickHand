@@ -1,7 +1,7 @@
 pyinstaller --hidden-import pkg_resources.py2_warn --noconfirm -w  -i icon.ico QuickHand.py
 cp -r "./backgrounds" "./dist/QuickHand"
 cp -r "./fonts" "./dist/QuickHand"
-cp -r "./asset" "./dist/QuickHand"
+cp -r "../assets" "./dist/QuickHand"
 cp  "./misc/README_zh.html" "./dist/QuickHand"
 cp -r "./database.db" "./dist/QuickHand"
 cp -r "./icon.ico" "./dist/QuickHand"
