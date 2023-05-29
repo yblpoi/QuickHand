@@ -20,7 +20,7 @@ dbname = './database.db'  # 存储预设的数据库名字
 presetTableName = 'configPreset'  # 存储预设的表单名字
 preferenceTableName = 'preference'
 styleFile = './style.css'
-version = 'V1.0.0'
+version = 'V1.0.1'
 
 
 

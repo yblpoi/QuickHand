@@ -121,3 +121,14 @@ src/moduels/HandRight/
 src/build/
 src/dist/
 src/output/
+
+# venv
+pyvenv.cfg
+/Scripts
+/Include
+
+# 7z
+/src/*.7z
+
+# vscode
+*.code-workspace

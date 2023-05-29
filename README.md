@@ -1,11 +1,12 @@
-#  ![icon.ico](assets/icon.ico) Quick Hand
+# ![icon.ico](assets/icon.ico) Quick Hand
 
 ## 📝 介绍
+
 快速的仿手写文字的图片生成器。基于 https://github.com/Gsllchb/Handright/ 的 GUI。
 
 它是开源的，你可以免费使用它。下载请到 release 界面。
 
-目前在两个仓库更新：
+目前原作者在两个仓库更新：
 
 - https://github.com/HaujetZhao/QuickHand
 - https://gitee.com/haujet/QuickHand
@@ -15,8 +16,6 @@
 界面预览：
 
 ![image-20200808220817456](assets/image-20200808220817456.png)
-
-
 
 ## 🔮 使用说明
 
@@ -31,14 +30,16 @@ Windows 64 位系统的用户：下载软件发行版压缩包，解压，双击
 
 ![params_visualizing](assets/params_visualizing.png)
 
-## 🔨 参与贡献
+## 🔨 具体打包方法
 
-作者只有 Win10 64 位系统。如果你用的是其它系统电脑，比如 windows 32 位、MacOS、Linux，你可以参与志愿打包。
+建议Python版本为：3.9
+
+由于原作者使用的 `pyside2`目前只支持到了 `Python3.10`，使用较为新的Python版本时，会出现无法安装环境的问题。因此，目前我在win10上的解决方案为使用conda建立虚拟环境。
 
 只要安装上 requirements.txt 中的 python 依赖包，确保源码能跑起来，再用 pyinstaller 使用以下的命令将 QuickHand.py 打包：
 
 ```
-lss
+pyinstaller --hidden-import pkg_resources.py2_warn --noconfirm -w  -i icon.ico QuickHand.py
 
 ```
 
@@ -53,21 +54,21 @@ lss
 - `sponsor.jpg` 文件
 - `style.css` 文件
 
-都复制到打包出的 QuickHand 文件夹根目录，再打包成压缩包，即可。
+都复制到打包出的 `/dist/QuickHand` 文件夹根目录，再打包成压缩包，即可。
 
 Linux 和 MacOS 用户可能还需要将打包出的 QuickHand 文件夹根目录内的可执行文件加上执行权限才行，并且不能用 zip 等打包格式，因为这会使得可执行权限丢失。建议使用 tar.gz 格式压缩。
 
 MacOS 用户不能使用 `icon.ico` 图标，请手动将其转换为 `icon.icns` 格式图片，放到打包出的 QuickHand 文件夹根目录内。
 
-## ☕ 打赏
+## 😀 改动与更新
 
-万水千山总是情，一块几块都是情。本软件完全开源，用爱发电，如果你愿意，可以以打赏的方式支持我一下：
+在原作者基础上，我做了以下改动：
 
-![sponsor](assets/sponsor.jpg)
+* 合并了 `repuirements.txt`
+* 其他还在搞。。。
 
+未来的方向：
 
-
-## 😀 交流
-
-如果有软件方面的反馈可以提交 issues，或者加入 QQ 群：[1146626791](https://qm.qq.com/cgi-bin/qm/qr?k=DgiFh5cclAElnELH4mOxqWUBxReyEVpm&jump_from=webapi) 
-
+* 添加文件输入的功能
+* 使用GitHu Aciton自动打包
+* 保持Handright和Pillow为较新版本
