@@ -25,7 +25,7 @@ class GenerateImagesThread(QThread):
                 if self.showImage == True:
                     im.show()
                 outputDir = self.outputPath.replace('\\', '/')
-                im.save(outputDir + "/{}.webp".replace('//', '/').format(i))
+                im.save(outputDir + "/{}.png".replace('//', '/').format(i))
             self.signal.emit('所有图片生成完毕，输出文件夹为：%s\n\n' % outputDir)
         except Exception as e:
             self.signal.emit('出错了，报错信息如下：\n\n')
